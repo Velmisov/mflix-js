@@ -69,7 +69,7 @@ export default class UsersDAO {
         name,
         email,
         password,
-      });
+      }, { w: 'majority' });
       return { success: true }
     } catch (e) {
       if (String(e).startsWith("MongoError: E11000 duplicate key error")) {
